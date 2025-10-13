@@ -8,29 +8,64 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Routes
+// Main Pages
 app.get('/', (req, res) => {
   res.render('index', { title: 'QuantumBayCloud – Secure Cloud Storage & Email Solutions' });
 });
 
 app.get('/features', (req, res) => {
-  res.render('index', { title: 'Features – QuantumBayCloud' });
+  res.render('features', { title: 'Features – QuantumBayCloud' });
 });
 
 app.get('/pricing', (req, res) => {
-  res.render('index', { title: 'Pricing – QuantumBayCloud' });
+  res.render('pricing', { title: 'Pricing – QuantumBayCloud' });
 });
 
+// Product Pages
 app.get('/storage', (req, res) => {
-  res.render('index', { title: 'Cloud Storage – QuantumBayCloud' });
+  res.render('storage', { title: 'Secure Cloud Storage – QuantumBayCloud' });
 });
 
 app.get('/email', (req, res) => {
-  res.render('index', { title: 'Email Hosting – QuantumBayCloud' });
+  res.render('email', { title: 'Professional Email Hosting – QuantumBayCloud' });
 });
 
+// Feature Detail Pages
+app.get('/file-sync', (req, res) => {
+  res.render('file-sync', { title: 'Automatic File Sync – QuantumBayCloud' });
+});
+
+app.get('/collaboration', (req, res) => {
+  res.render('collaboration', { title: 'Team Collaboration – QuantumBayCloud' });
+});
+
+app.get('/security', (req, res) => {
+  res.render('security', { title: 'Advanced Security – QuantumBayCloud' });
+});
+
+app.get('/file-transfer', (req, res) => {
+  res.render('file-transfer', { title: 'Large File Transfers – QuantumBayCloud' });
+});
+
+app.get('/web-access', (req, res) => {
+  res.render('web-access', { title: 'Web Access – QuantumBayCloud' });
+});
+
+app.get('/smart-search', (req, res) => {
+  res.render('smart-search', { title: 'Smart Search – QuantumBayCloud' });
+});
+
+app.get('/file-recovery', (req, res) => {
+  res.render('file-recovery', { title: 'File Recovery – QuantumBayCloud' });
+});
+
+// Support Pages
 app.get('/support', (req, res) => {
-  res.render('index', { title: 'Support Center – QuantumBayCloud' });
+  res.render('support', { title: 'Support Center – QuantumBayCloud' });
+});
+
+app.get('/contact', (req, res) => {
+  res.render('contact', { title: 'Contact Us – QuantumBayCloud' });
 });
 
 app.get('/blog', (req, res) => {
@@ -41,10 +76,7 @@ app.get('/api', (req, res) => {
   res.render('index', { title: 'API Documentation – QuantumBayCloud' });
 });
 
-app.get('/contact', (req, res) => {
-  res.render('index', { title: 'Contact Us – QuantumBayCloud' });
-});
-
+// Auth Pages
 app.get('/login', (req, res) => {
   res.render('index', { title: 'Sign In – QuantumBayCloud' });
 });
