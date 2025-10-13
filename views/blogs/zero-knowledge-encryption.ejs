@@ -1,0 +1,44 @@
+<h2>What is Zero-Knowledge Encryption?</h2>
+<p>Zero-knowledge encryption is a security model where only you—not even the service provider—can access your unencrypted data. Your files are encrypted on your device before being uploaded to the cloud.</p>
+
+<h2>How Does It Work?</h2>
+<p>The process involves several steps:</p>
+
+<h3>1. Local Encryption</h3>
+<p>When you upload a file, it's encrypted on your device using AES-256 encryption. The encryption key is derived from your password, which never leaves your device.</p>
+
+<h3>2. Secure Upload</h3>
+<p>The encrypted file is transmitted over a secure TLS connection to the cloud storage servers. At this point, the file is already encrypted and unreadable.</p>
+
+<h3>3. Server Storage</h3>
+<p>The cloud provider stores only the encrypted version. Without your encryption key, they cannot decrypt the file—even if compelled by law enforcement.</p>
+
+<h2>Why Zero-Knowledge Matters</h2>
+<ul>
+  <li><strong>Complete Privacy:</strong> Your data is truly private, even from the service provider</li>
+  <li><strong>Protection from Breaches:</strong> If servers are compromised, your data remains encrypted</li>
+  <li><strong>Legal Protection:</strong> Service providers cannot hand over readable data</li>
+  <li><strong>Trust Minimization:</strong> You don't have to trust the provider with your data</li>
+</ul>
+
+<h2>The Trade-offs</h2>
+<p>Zero-knowledge encryption comes with some considerations:</p>
+<ul>
+  <li><strong>Password Recovery:</strong> If you lose your password, your data cannot be recovered</li>
+  <li><strong>Performance:</strong> Encryption/decryption happens on your device, requiring some processing power</li>
+  <li><strong>Sharing:</strong> Sharing files requires additional key management</li>
+</ul>
+
+<h2>Zero-Knowledge at QuantumBayCloud</h2>
+<p>At QuantumBayCloud, we implement zero-knowledge encryption by default. Your files are encrypted before they leave your device, and we never have access to your encryption keys.</p>
+
+<h2>Best Practices</h2>
+<ol>
+  <li>Use a strong, unique master password</li>
+  <li>Enable two-factor authentication</li>
+  <li>Store your password securely (password manager)</li>
+  <li>Never share your master password</li>
+</ol>
+
+<h2>Conclusion</h2>
+<p>Zero-knowledge encryption represents the gold standard in cloud security. While it requires responsible password management, the privacy and security benefits are unmatched.</p>

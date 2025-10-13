@@ -1,0 +1,58 @@
+<%- include('partials/header') %>
+
+<section class="blog-post-page">
+  <div class="container">
+    <article class="blog-post">
+      <div class="post-header">
+        <div class="post-meta">
+          <span class="post-category"><%= category %></span>
+          <span class="post-date"><%= date %></span>
+          <span class="post-read-time">⏱️ <%= readTime %> min read</span>
+        </div>
+        <h1 class="post-title"><%= title %></h1>
+        <p class="post-excerpt"><%= excerpt %></p>
+        <div class="post-author">
+          <div class="author-avatar">👤</div>
+          <div class="author-info">
+            <div class="author-name"><%= author %></div>
+            <div class="author-role"><%= authorRole %></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="post-content">
+        <%- content %>
+      </div>
+
+      <div class="post-footer">
+        <div class="post-tags">
+          <% tags.forEach(tag => { %>
+            <span class="tag"><%= tag %></span>
+          <% }) %>
+        </div>
+        <div class="post-share">
+          <span>Share:</span>
+          <a href="#" class="share-btn">Twitter</a>
+          <a href="#" class="share-btn">LinkedIn</a>
+          <a href="#" class="share-btn">Facebook</a>
+        </div>
+      </div>
+    </article>
+
+    <div class="related-posts">
+      <h3>Related Articles</h3>
+      <div class="related-grid">
+        <a href="/blog/zero-knowledge-encryption" class="related-card">
+          <h4>Understanding Zero-Knowledge Encryption</h4>
+          <p>Security • 5 min read</p>
+        </a>
+        <a href="/blog/team-collaboration-workflows" class="related-card">
+          <h4>Team Collaboration Workflows</h4>
+          <p>Collaboration • 7 min read</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

@@ -14,83 +14,34 @@
 <section class="blog-section">
   <div class="container">
     <div class="blog-grid">
-      <article class="blog-card">
-        <div class="blog-image">📁</div>
-        <div class="blog-content">
-          <div class="blog-meta">
-            <span class="blog-category">Cloud Storage</span>
-            <span class="blog-date">October 10, 2025</span>
+      <% Object.keys(blogPosts).forEach(slug => { 
+        const post = blogPosts[slug]; 
+      %>
+        <article class="blog-card">
+          <div class="blog-image">
+            <% 
+              const icons = {
+                'Cloud Storage': '📁',
+                'Security': '🔒',
+                'Collaboration': '👥',
+                'Email': '📧',
+                'Tips & Tricks': '⚡',
+                'Product Updates': '🌐'
+              };
+            %>
+            <%= icons[post.category] || '📄' %>
           </div>
-          <h3>10 Best Practices for Organizing Your Cloud Files</h3>
-          <p>Learn how to structure your cloud storage for maximum productivity and easy file retrieval.</p>
-          <a href="#" class="blog-link">Read More →</a>
-        </div>
-      </article>
-
-      <article class="blog-card">
-        <div class="blog-image">🔒</div>
-        <div class="blog-content">
-          <div class="blog-meta">
-            <span class="blog-category">Security</span>
-            <span class="blog-date">October 8, 2025</span>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="blog-category"><%= post.category %></span>
+              <span class="blog-date"><%= post.date %></span>
+            </div>
+            <h3><%= post.title %></h3>
+            <p><%= post.excerpt %></p>
+            <a href="/blog/<%= slug %>" class="blog-link">Read More →</a>
           </div>
-          <h3>Understanding Zero-Knowledge Encryption</h3>
-          <p>What is zero-knowledge encryption and why it matters for your data security.</p>
-          <a href="#" class="blog-link">Read More →</a>
-        </div>
-      </article>
-
-      <article class="blog-card">
-        <div class="blog-image">👥</div>
-        <div class="blog-content">
-          <div class="blog-meta">
-            <span class="blog-category">Collaboration</span>
-            <span class="blog-date">October 5, 2025</span>
-          </div>
-          <h3>How to Set Up Team Collaboration Workflows</h3>
-          <p>Step-by-step guide to creating efficient team workspaces and managing permissions.</p>
-          <a href="#" class="blog-link">Read More →</a>
-        </div>
-      </article>
-
-      <article class="blog-card">
-        <div class="blog-image">📧</div>
-        <div class="blog-content">
-          <div class="blog-meta">
-            <span class="blog-category">Email</span>
-            <span class="blog-date">October 1, 2025</span>
-          </div>
-          <h3>Migrating Your Email to a Custom Domain</h3>
-          <p>Complete guide to moving your business email to a professional custom domain.</p>
-          <a href="#" class="blog-link">Read More →</a>
-        </div>
-      </article>
-
-      <article class="blog-card">
-        <div class="blog-image">⚡</div>
-        <div class="blog-content">
-          <div class="blog-meta">
-            <span class="blog-category">Tips & Tricks</span>
-            <span class="blog-date">September 28, 2025</span>
-          </div>
-          <h3>Boost Your Productivity with File Sync</h3>
-          <p>Discover how automatic file synchronization can streamline your workflow.</p>
-          <a href="#" class="blog-link">Read More →</a>
-        </div>
-      </article>
-
-      <article class="blog-card">
-        <div class="blog-image">🌐</div>
-        <div class="blog-content">
-          <div class="blog-meta">
-            <span class="blog-category">Product Updates</span>
-            <span class="blog-date">September 25, 2025</span>
-          </div>
-          <h3>What's New in QuantumBayCloud</h3>
-          <p>Latest features and improvements to enhance your cloud storage experience.</p>
-          <a href="#" class="blog-link">Read More →</a>
-        </div>
-      </article>
+        </article>
+      <% }) %>
     </div>
   </div>
 </section>
