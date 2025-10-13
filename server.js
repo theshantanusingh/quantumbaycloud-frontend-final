@@ -30,7 +30,15 @@ app.get('/email', (req, res) => {
 });
 
 app.get('/support', (req, res) => {
-  res.render('index', { title: 'Support – QuantumBayCloud' });
+  res.render('index', { title: 'Support Center – QuantumBayCloud' });
+});
+
+app.get('/blog', (req, res) => {
+  res.render('index', { title: 'Blog – QuantumBayCloud' });
+});
+
+app.get('/api', (req, res) => {
+  res.render('index', { title: 'API Documentation – QuantumBayCloud' });
 });
 
 app.get('/contact', (req, res) => {

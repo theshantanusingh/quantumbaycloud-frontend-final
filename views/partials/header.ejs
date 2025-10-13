@@ -12,19 +12,79 @@
 <body>
   <nav class="navbar">
     <div class="container">
-      <div class="logo">QuantumBayCloud</div>
+      <a href="/" class="logo">QuantumBayCloud</a>
+      
       <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/features">Features</a></li>
-        <li><a href="/pricing">Pricing</a></li>
-        <li><a href="/storage">Cloud Storage</a></li>
-        <li><a href="/email">Email Hosting</a></li>
-        <li><a href="/support">Support</a></li>
-        <li><a href="/contact">Contact</a></li>
+        <li class="nav-item">
+          <a href="/features" class="nav-link">Features</a>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link">Products <span class="dropdown-arrow">▼</span></a>
+          <div class="dropdown-menu">
+            <a href="/storage" class="dropdown-item">
+              <div class="dropdown-icon">📁</div>
+              <div class="dropdown-content">
+                <div class="dropdown-title">Cloud Storage</div>
+                <div class="dropdown-desc">Secure file storage & sharing</div>
+              </div>
+            </a>
+            <a href="/email" class="dropdown-item">
+              <div class="dropdown-icon">📧</div>
+              <div class="dropdown-content">
+                <div class="dropdown-title">Email Hosting</div>
+                <div class="dropdown-desc">Professional business email</div>
+              </div>
+            </a>
+          </div>
+        </li>
+        
+        <li class="nav-item">
+          <a href="/pricing" class="nav-link">Pricing</a>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link">Resources <span class="dropdown-arrow">▼</span></a>
+          <div class="dropdown-menu">
+            <a href="/support" class="dropdown-item">
+              <div class="dropdown-icon">💬</div>
+              <div class="dropdown-content">
+                <div class="dropdown-title">Support Center</div>
+                <div class="dropdown-desc">Get help & documentation</div>
+              </div>
+            </a>
+            <a href="/blog" class="dropdown-item">
+              <div class="dropdown-icon">📰</div>
+              <div class="dropdown-content">
+                <div class="dropdown-title">Blog</div>
+                <div class="dropdown-desc">Tips, guides & updates</div>
+              </div>
+            </a>
+            <a href="/api" class="dropdown-item">
+              <div class="dropdown-icon">⚙️</div>
+              <div class="dropdown-content">
+                <div class="dropdown-title">API Documentation</div>
+                <div class="dropdown-desc">Developer resources</div>
+              </div>
+            </a>
+          </div>
+        </li>
+        
+        <li class="nav-item">
+          <a href="/contact" class="nav-link">Contact</a>
+        </li>
       </ul>
+      
       <div class="nav-actions">
         <a href="/login" class="btn-secondary">Sign In</a>
         <a href="/signup" class="btn-primary">Get Started</a>
       </div>
+      
+      <!-- Mobile Menu Toggle -->
+      <button class="mobile-menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </nav>
