@@ -1,0 +1,287 @@
+/* Landing Page Specific Styles */
+
+/* Hero Section */
+.hero {
+  padding: 140px 0 80px 0;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.hero .container {
+  max-width: 900px;
+}
+
+.hero-content {
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: #1f2937;
+}
+
+.hero-subtitle {
+  font-size: 20px;
+  color: #6b7280;
+  line-height: 1.6;
+  margin-bottom: 32px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+  justify-content: center;
+}
+
+.hero-note {
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+/* Features Section */
+.features {
+  padding: 80px 0;
+  background: #f9fafb;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 56px;
+  color: #1f2937;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+/* Services Section */
+.services {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.service-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.service-block:last-child {
+  margin-bottom: 0;
+}
+
+.service-block.reverse {
+  direction: rtl;
+}
+
+.service-block.reverse > * {
+  direction: ltr;
+}
+
+.service-content h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #1f2937;
+}
+
+.service-list {
+  list-style: none;
+  padding: 0;
+}
+
+.service-list li {
+  padding: 12px 0;
+  color: #4b5563;
+  font-size: 16px;
+  position: relative;
+  padding-left: 28px;
+}
+
+.service-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #3b82f6;
+  font-weight: 700;
+}
+
+.storage-box,
+.email-box {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 32px;
+}
+
+.storage-item,
+.email-item {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.item-icon {
+  font-size: 24px;
+}
+
+.item-name {
+  font-size: 15px;
+  color: #374151;
+  font-weight: 500;
+}
+
+.email-header {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.email-subject {
+  font-size: 15px;
+  color: #1f2937;
+  font-weight: 500;
+}
+
+/* Pricing Section */
+.pricing {
+  padding: 80px 0;
+  background: #f9fafb;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.pricing-card {
+  background: #ffffff;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 40px 32px;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.pricing-card:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.15);
+}
+
+.pricing-card.featured {
+  border-color: #3b82f6;
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.2);
+}
+
+.plan-name {
+  font-size: 20px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.plan-price {
+  margin-bottom: 32px;
+}
+
+.amount {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1;
+  color: #1f2937;
+}
+
+.period {
+  font-size: 16px;
+  color: #6b7280;
+  font-weight: 400;
+}
+
+.plan-features {
+  list-style: none;
+  margin-bottom: 32px;
+  padding: 0;
+}
+
+.plan-features li {
+  padding: 10px 0;
+  color: #4b5563;
+  font-size: 15px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.plan-features li:last-child {
+  border-bottom: none;
+}
+
+.pricing-card .btn-primary,
+.pricing-card .btn-outline {
+  width: 100%;
+  text-align: center;
+}
+
+/* CTA Section */
+.cta {
+  padding: 80px 0;
+  text-align: center;
+  background: #ffffff;
+  border-top: 1px solid #e5e7eb;
+}
+
+.cta h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #1f2937;
+}
+
+.cta p {
+  font-size: 18px;
+  color: #6b7280;
+  margin-bottom: 32px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .service-block,
+  .service-block.reverse {
+    grid-template-columns: 1fr;
+    direction: ltr;
+  }
+  
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-title {
+    font-size: 36px;
+  }
+}
