@@ -86,6 +86,16 @@ app.get('/signup', (req, res) => {
   res.render('signup', { title: 'Sign Up – QuantumBayCloud' });
 });
 
+// Legal Pages
+app.get('/terms', (req, res) => {
+  res.render('terms', { title: 'Terms of Service – QuantumBayCloud' });
+});
+
+app.get('/privacy', (req, res) => {
+  res.render('privacy', { title: 'Privacy Policy – QuantumBayCloud' });
+});
+
+
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}/`);
 });
