@@ -59,30 +59,31 @@ app.get('/file-recovery', (req, res) => {
   res.render('file-recovery', { title: 'File Recovery – QuantumBayCloud' });
 });
 
-// Support Pages
+// Resources Pages
 app.get('/support', (req, res) => {
   res.render('support', { title: 'Support Center – QuantumBayCloud' });
 });
 
+app.get('/blog', (req, res) => {
+  res.render('blog', { title: 'Blog – QuantumBayCloud' });
+});
+
+app.get('/api', (req, res) => {
+  res.render('api', { title: 'API Documentation – QuantumBayCloud' });
+});
+
+// Contact Page
 app.get('/contact', (req, res) => {
   res.render('contact', { title: 'Contact Us – QuantumBayCloud' });
 });
 
-app.get('/blog', (req, res) => {
-  res.render('index', { title: 'Blog – QuantumBayCloud' });
-});
-
-app.get('/api', (req, res) => {
-  res.render('index', { title: 'API Documentation – QuantumBayCloud' });
-});
-
 // Auth Pages
 app.get('/login', (req, res) => {
-  res.render('index', { title: 'Sign In – QuantumBayCloud' });
+  res.render('login', { title: 'Sign In – QuantumBayCloud' });
 });
 
 app.get('/signup', (req, res) => {
-  res.render('index', { title: 'Sign Up – QuantumBayCloud' });
+  res.render('signup', { title: 'Sign Up – QuantumBayCloud' });
 });
 
 app.listen(PORT, () => {

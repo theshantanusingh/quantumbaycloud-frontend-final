@@ -1,0 +1,120 @@
+<%- include('partials/header') %>
+
+<section class="auth-section">
+  <div class="auth-container">
+    <div class="auth-box">
+      <div class="auth-logo">
+        <h1>QuantumBayCloud</h1>
+        <p>Sign in to your account</p>
+      </div>
+
+      <form class="auth-form" id="loginForm">
+        <div class="form-group">
+          <label for="login-email">Email Address</label>
+          <input type="email" id="login-email" name="email" required placeholder="Enter your email">
+        </div>
+        
+        <div class="form-group">
+          <label for="login-password">Password</label>
+          <div class="password-wrapper">
+            <input type="password" id="login-password" name="password" required placeholder="Enter your password">
+            <button type="button" class="password-toggle" onclick="togglePassword('login-password', this)">
+              <span class="eye-icon">👁️</span>
+            </button>
+          </div>
+        </div>
+        
+        <div class="form-options">
+          <label class="remember-me">
+            <input type="checkbox" name="remember">
+            <span>Remember me</span>
+          </label>
+          <a href="#" class="forgot-password">Forgot password?</a>
+        </div>
+        
+        <div class="captcha-box">
+          <label>Security Verification</label>
+          <div class="captcha-question" id="loginCaptchaQuestion"></div>
+          <input type="number" id="login-captcha" name="captcha" required placeholder="Enter your answer" class="captcha-input">
+          <button type="button" class="captcha-refresh" onclick="generateCaptcha('login')">
+            <span>🔄</span> New Question
+          </button>
+        </div>
+        
+        <button type="submit" class="btn-submit">Sign In</button>
+      </form>
+      
+      <div class="auth-switch">
+        Don't have an account? <a href="/signup">Sign up</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+let loginCaptchaAnswer = 0;
+
+function generateCaptcha(type) {
+  const operations = [
+    { symbol: '+', fn: (a, b) => a + b },
+    { symbol: '−', fn: (a, b) => a - b },
+    { symbol: '×', fn: (a, b) => a * b },
+    { symbol: '÷', fn: (a, b) => Math.floor(a / b) }
+  ];
+  
+  let num1 = Math.floor(Math.random() * 50) + 20;
+  let num2 = Math.floor(Math.random() * 30) + 5;
+  let num3 = Math.floor(Math.random() * 15) + 5;
+  
+  const op1 = operations[Math.floor(Math.random() * 3)];
+  const op2 = operations[Math.floor(Math.random() * 3)];
+  
+  if (op1.symbol === '÷') num1 = num2 * (Math.floor(Math.random() * 10) + 2);
+  
+  const step1 = op1.fn(num1, num2);
+  const answer = op2.fn(step1, num3);
+  
+  const question = `( ${num1} ${op1.symbol} ${num2} ) ${op2.symbol} ${num3}`;
+  
+  if (type === 'login') {
+    loginCaptchaAnswer = answer;
+    document.getElementById('loginCaptchaQuestion').textContent = question;
+  } else {
+    signupCaptchaAnswer = answer;
+    document.getElementById('signupCaptchaQuestion').textContent = question;
+  }
+}
+
+function togglePassword(inputId, button) {
+  const input = document.getElementById(inputId);
+  const icon = button.querySelector('.eye-icon');
+  
+  if (input.type === 'password') {
+    input.type = 'text';
+    icon.textContent = '🙈';
+  } else {
+    input.type = 'password';
+    icon.textContent = '👁️';
+  }
+}
+
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  const captcha = parseInt(document.getElementById('login-captcha').value);
+  
+  if (captcha !== loginCaptchaAnswer) {
+    alert('❌ Incorrect answer. Please try again.');
+    generateCaptcha('login');
+    document.getElementById('login-captcha').value = '';
+    return;
+  }
+  
+  alert('✅ Login successful! (Demo)');
+  // Add your login logic here
+});
+
+window.addEventListener('load', () => generateCaptcha('login'));
+</script>
+
+<%- include('partials/footer') %>

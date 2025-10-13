@@ -1,0 +1,118 @@
+<%- include('partials/header') %>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1 class="hero-title">Get in Touch</h1>
+      <p class="hero-subtitle">
+        Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="contact-page">
+  <div class="container">
+    <div class="contact-wrapper">
+      <div class="contact-form-section">
+        <h2>Send Us a Message</h2>
+        <form class="contact-form">
+          <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name" required placeholder="Your name">
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required placeholder="your@email.com">
+          </div>
+          
+          <div class="form-group">
+            <label for="subject">Subject *</label>
+            <input type="text" id="subject" name="subject" required placeholder="How can we help?">
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" rows="6" required placeholder="Tell us more about your inquiry..."></textarea>
+          </div>
+          
+          <button type="submit" class="btn-primary">Send Message</button>
+        </form>
+      </div>
+      
+      <div class="contact-info-section">
+        <h2>Contact Information</h2>
+        
+        <div class="contact-info-item">
+          <div class="info-icon">📧</div>
+          <div class="info-content">
+            <h3>Email</h3>
+            <p>support@quantumbaycloud.com</p>
+            <p class="info-note">We'll respond within 24 hours</p>
+          </div>
+        </div>
+        
+        <div class="contact-info-item">
+          <div class="info-icon">💼</div>
+          <div class="info-content">
+            <h3>Sales</h3>
+            <p>sales@quantumbaycloud.com</p>
+            <p class="info-note">For business inquiries</p>
+          </div>
+        </div>
+        
+        <div class="contact-info-item">
+          <div class="info-icon">⏰</div>
+          <div class="info-content">
+            <h3>Office Hours</h3>
+            <p>Monday - Friday</p>
+            <p class="info-note">9:00 AM - 6:00 PM IST</p>
+          </div>
+        </div>
+        
+        <div class="contact-info-item">
+          <div class="info-icon">💬</div>
+          <div class="info-content">
+            <h3>Live Chat</h3>
+            <p>Available during office hours</p>
+            <p class="info-note">Quick responses for urgent issues</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-alternate">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Other Ways to Reach Us</h2>
+    </div>
+    
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">📚</div>
+        <h3>Knowledge Base</h3>
+        <p>Find answers in our comprehensive documentation and help articles.</p>
+        <a href="/support" class="feature-link">Visit Support Center →</a>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">🎫</div>
+        <h3>Submit a Ticket</h3>
+        <p>Create a support ticket for technical issues and track its progress.</p>
+        <a href="/support" class="feature-link">Open Ticket →</a>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">📅</div>
+        <h3>Schedule a Demo</h3>
+        <p>Book a personalized demo with our team to see QuantumBayCloud in action.</p>
+        <a href="#" class="feature-link">Book Demo →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

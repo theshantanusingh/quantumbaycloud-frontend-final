@@ -1,0 +1,213 @@
+<%- include('partials/header') %>
+
+<section class="auth-section">
+  <div class="auth-container">
+    <div class="auth-box signup-box">
+      <div class="auth-logo">
+        <h1>QuantumBayCloud</h1>
+        <p>Create your account</p>
+      </div>
+
+      <form class="auth-form" id="signupForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="signup-name">Full Name</label>
+            <input type="text" id="signup-name" name="name" required placeholder="John Doe">
+          </div>
+          <div class="form-group">
+            <label for="signup-email">Email Address</label>
+            <input type="email" id="signup-email" name="email" required placeholder="your@email.com">
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="signup-alt-email">Alternative Email <span class="optional">(Optional)</span></label>
+          <input type="email" id="signup-alt-email" name="altEmail" placeholder="backup@email.com">
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="country-code">Country Code</label>
+            <select id="country-code" name="countryCode" required>
+              <option value="+91">🇮🇳 India (+91)</option>
+              <option value="+1">🇺🇸 United States (+1)</option>
+              <option value="+44">🇬🇧 United Kingdom (+44)</option>
+              <option value="+61">🇦🇺 Australia (+61)</option>
+              <option value="+86">🇨🇳 China (+86)</option>
+              <option value="+81">🇯🇵 Japan (+81)</option>
+              <option value="+49">🇩🇪 Germany (+49)</option>
+              <option value="+33">🇫🇷 France (+33)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="signup-phone">Phone Number</label>
+            <input type="tel" id="signup-phone" name="phone" required placeholder="9876543210">
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="signup-location">Country</label>
+          <select id="signup-location" name="location" required>
+            <option value="">Select your country</option>
+            <option value="IN">🇮🇳 India</option>
+            <option value="US">🇺🇸 United States</option>
+            <option value="UK">🇬🇧 United Kingdom</option>
+            <option value="CA">🇨🇦 Canada</option>
+            <option value="AU">🇦🇺 Australia</option>
+            <option value="SG">🇸🇬 Singapore</option>
+            <option value="DE">🇩🇪 Germany</option>
+            <option value="FR">🇫🇷 France</option>
+            <option value="JP">🇯🇵 Japan</option>
+            <option value="CN">🇨🇳 China</option>
+          </select>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="signup-password">Password</label>
+            <div class="password-wrapper">
+              <input type="password" id="signup-password" name="password" required placeholder="Create a strong password">
+              <button type="button" class="password-toggle" onclick="togglePassword('signup-password', this)">
+                <span class="eye-icon">👁️</span>
+              </button>
+            </div>
+            <div class="password-strength-bar">
+              <div class="strength-fill" id="strengthFill"></div>
+            </div>
+            <small class="password-hint">Min 8 chars, uppercase, lowercase, number & special character</small>
+          </div>
+          <div class="form-group">
+            <label for="signup-confirm-password">Confirm Password</label>
+            <div class="password-wrapper">
+              <input type="password" id="signup-confirm-password" name="confirmPassword" required placeholder="Re-enter your password">
+              <button type="button" class="password-toggle" onclick="togglePassword('signup-confirm-password', this)">
+                <span class="eye-icon">👁️</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="captcha-box">
+          <label>Security Verification</label>
+          <div class="captcha-question" id="signupCaptchaQuestion"></div>
+          <input type="number" id="signup-captcha" name="captcha" required placeholder="Enter your answer" class="captcha-input">
+          <button type="button" class="captcha-refresh" onclick="generateCaptcha('signup')">
+            <span>🔄</span> New Question
+          </button>
+        </div>
+        
+        <label class="terms-checkbox">
+          <input type="checkbox" name="terms" required>
+          <span>I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></span>
+        </label>
+        
+        <button type="submit" class="btn-submit">Create Account</button>
+      </form>
+      
+      <div class="auth-switch">
+        Already have an account? <a href="/login">Sign in</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+let signupCaptchaAnswer = 0;
+
+function generateCaptcha(type) {
+  const operations = [
+    { symbol: '+', fn: (a, b) => a + b },
+    { symbol: '−', fn: (a, b) => a - b },
+    { symbol: '×', fn: (a, b) => a * b },
+    { symbol: '÷', fn: (a, b) => Math.floor(a / b) }
+  ];
+  
+  let num1 = Math.floor(Math.random() * 50) + 20;
+  let num2 = Math.floor(Math.random() * 30) + 5;
+  let num3 = Math.floor(Math.random() * 15) + 5;
+  
+  const op1 = operations[Math.floor(Math.random() * 3)];
+  const op2 = operations[Math.floor(Math.random() * 3)];
+  
+  if (op1.symbol === '÷') num1 = num2 * (Math.floor(Math.random() * 10) + 2);
+  
+  const step1 = op1.fn(num1, num2);
+  const answer = op2.fn(step1, num3);
+  
+  const question = `( ${num1} ${op1.symbol} ${num2} ) ${op2.symbol} ${num3}`;
+  
+  if (type === 'login') {
+    loginCaptchaAnswer = answer;
+    document.getElementById('loginCaptchaQuestion').textContent = question;
+  } else {
+    signupCaptchaAnswer = answer;
+    document.getElementById('signupCaptchaQuestion').textContent = question;
+  }
+}
+
+function togglePassword(inputId, button) {
+  const input = document.getElementById(inputId);
+  const icon = button.querySelector('.eye-icon');
+  
+  if (input.type === 'password') {
+    input.type = 'text';
+    icon.textContent = '🙈';
+  } else {
+    input.type = 'password';
+    icon.textContent = '👁️';
+  }
+}
+
+// Password strength
+document.getElementById('signup-password').addEventListener('input', function(e) {
+  const password = e.target.value;
+  const fill = document.getElementById('strengthFill');
+  
+  let strength = 0;
+  if (password.length >= 8) strength++;
+  if (password.match(/[a-z]/)) strength++;
+  if (password.match(/[A-Z]/)) strength++;
+  if (password.match(/[0-9]/)) strength++;
+  if (password.match(/[^a-zA-Z0-9]/)) strength++;
+  
+  fill.style.width = (strength * 20) + '%';
+  
+  if (strength <= 2) fill.className = 'strength-fill weak';
+  else if (strength <= 3) fill.className = 'strength-fill medium';
+  else if (strength <= 4) fill.className = 'strength-fill good';
+  else fill.className = 'strength-fill strong';
+});
+
+document.getElementById('signupForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  const password = document.getElementById('signup-password').value;
+  const confirm = document.getElementById('signup-confirm-password').value;
+  const captcha = parseInt(document.getElementById('signup-captcha').value);
+  
+  if (password !== confirm) {
+    alert('❌ Passwords do not match!');
+    return;
+  }
+  
+  const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+  if (!regex.test(password)) {
+    alert('❌ Password must meet all requirements!');
+    return;
+  }
+  
+  if (captcha !== signupCaptchaAnswer) {
+    alert('❌ Incorrect answer. Please try again.');
+    generateCaptcha('signup');
+    document.getElementById('signup-captcha').value = '';
+    return;
+  }
+  
+  alert('✅ Account created successfully! (Demo)');
+  // Add your signup logic here
+});
+
+window.addEventListener('load', () => generateCaptcha('signup'));
+</script>
+
+<%- include('partials/footer') %>
