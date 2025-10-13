@@ -95,6 +95,19 @@ app.get('/privacy', (req, res) => {
   res.render('privacy', { title: 'Privacy Policy – QuantumBayCloud' });
 });
 
+// Company Pages
+app.get('/about', (req, res) => {
+  res.render('about', { title: 'About Us – QuantumBayCloud' });
+});
+
+app.get('/careers', (req, res) => {
+  res.render('careers', { title: 'Careers – QuantumBayCloud' });
+});
+
+app.get('/refund', (req, res) => {
+  res.render('refund', { title: 'Refund Policy – QuantumBayCloud' });
+});
+
 
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}/`);
