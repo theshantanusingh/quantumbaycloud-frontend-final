@@ -1,0 +1,42 @@
+<aside class="dashboard-sidebar">
+  <div class="sidebar-header">
+    <h3>My Account</h3>
+    <p class="user-email">user@example.com</p>
+  </div>
+  
+  <nav class="sidebar-nav">
+    <a href="/dashboard" class="nav-item <%= currentPage === 'dashboard' ? 'active' : '' %>">
+      <span class="nav-icon">📊</span>
+      <span>Dashboard</span>
+    </a>
+    <a href="/dashboard/files" class="nav-item <%= currentPage === 'files' ? 'active' : '' %>">
+      <span class="nav-icon">📁</span>
+      <span>My Files</span>
+    </a>
+    <a href="/dashboard/shared" class="nav-item <%= currentPage === 'shared' ? 'active' : '' %>">
+      <span class="nav-icon">👥</span>
+      <span>Shared with Me</span>
+    </a>
+    <a href="/dashboard/email" class="nav-item <%= currentPage === 'email' ? 'active' : '' %>">
+      <span class="nav-icon">📧</span>
+      <span>Email</span>
+    </a>
+    <a href="/dashboard/trash" class="nav-item <%= currentPage === 'trash' ? 'active' : '' %>">
+      <span class="nav-icon">🗑️</span>
+      <span>Trash</span>
+    </a>
+    <div class="nav-divider"></div>
+    <a href="/dashboard/settings" class="nav-item <%= currentPage === 'settings' ? 'active' : '' %>">
+      <span class="nav-icon">⚙️</span>
+      <span>Settings</span>
+    </a>
+    <a href="/dashboard/billing" class="nav-item <%= currentPage === 'billing' ? 'active' : '' %>">
+      <span class="nav-icon">💳</span>
+      <span>Billing</span>
+    </a>
+    <a href="/logout" class="nav-item">
+      <span class="nav-icon">🚪</span>
+      <span>Logout</span>
+    </a>
+  </nav>
+</aside>

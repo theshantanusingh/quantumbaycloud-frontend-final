@@ -207,6 +207,63 @@ app.get('/refund', (req, res) => {
   res.render('refund', { title: 'Refund Policy – QuantumBayCloud' });
 });
 
+
+
+
+
+
+
+
+
+
+// Dashboard Routes (all in /dashboard folder)
+app.get('/dashboard', (req, res) => {
+  res.render('dashboard/index', { 
+    title: 'Dashboard – QuantumBayCloud'
+  });
+});
+
+app.get('/dashboard/files', (req, res) => {
+  res.render('dashboard/files', { 
+    title: 'My Files – QuantumBayCloud'
+  });
+});
+
+app.get('/dashboard/shared', (req, res) => {
+  res.render('dashboard/shared', { 
+    title: 'Shared with Me – QuantumBayCloud'
+  });
+});
+
+app.get('/dashboard/email', (req, res) => {
+  res.render('dashboard/email', { 
+    title: 'Email – QuantumBayCloud'
+  });
+});
+
+app.get('/dashboard/trash', (req, res) => {
+  res.render('dashboard/trash', { 
+    title: 'Trash – QuantumBayCloud'
+  });
+});
+
+app.get('/dashboard/settings', (req, res) => {
+  res.render('dashboard/settings', { 
+    title: 'Settings – QuantumBayCloud'
+  });
+});
+
+app.get('/dashboard/billing', (req, res) => {
+  res.render('dashboard/billing', { 
+    title: 'Billing – QuantumBayCloud'
+  });
+});
+
+app.get('/logout', (req, res) => {
+  // Clear session here
+  res.redirect('/login');
+});
+
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}/`);
 });

@@ -1,0 +1,36 @@
+<%- include('../partials/dashboard-header') %>
+
+<section class="dashboard-page">
+  <div class="dashboard-container">
+    <%- include('../partials/dashboard-sidebar', { currentPage: 'email' }) %>
+
+    <main class="dashboard-main">
+      <div class="dashboard-header">
+        <h1>Email</h1>
+        <button class="btn-primary">
+          <span>✏️</span> Compose
+        </button>
+      </div>
+
+      <div class="dashboard-card">
+        <div class="email-list">
+          <div class="email-item unread">
+            <div class="email-sender">Sarah Chen</div>
+            <div class="email-subject">Project files attached</div>
+            <div class="email-preview">Hi team, I've attached the latest design files...</div>
+            <div class="email-time">10:30 AM</div>
+          </div>
+          <div class="email-item">
+            <div class="email-sender">Marketing Team</div>
+            <div class="email-subject">Campaign results for review</div>
+            <div class="email-preview">Please find the Q3 campaign metrics attached...</div>
+            <div class="email-time">Yesterday</div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</section>
+
+</body>
+</html>

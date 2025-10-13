@@ -1,0 +1,37 @@
+<%- include('../partials/dashboard-header') %>
+
+<section class="dashboard-page">
+  <div class="dashboard-container">
+    <%- include('../partials/dashboard-sidebar', { currentPage: 'shared' }) %>
+
+    <main class="dashboard-main">
+      <div class="dashboard-header">
+        <h1>Shared with Me</h1>
+      </div>
+
+      <div class="dashboard-card">
+        <div class="files-list">
+          <div class="file-item">
+            <span class="file-icon">📁</span>
+            <div class="file-info">
+              <h4>Design Files</h4>
+              <p>Shared by Sarah Chen • 3 days ago</p>
+            </div>
+            <button class="btn-icon-sm">⋮</button>
+          </div>
+          <div class="file-item">
+            <span class="file-icon">📄</span>
+            <div class="file-info">
+              <h4>Project Proposal.docx</h4>
+              <p>Shared by Marketing Team • 1 week ago</p>
+            </div>
+            <button class="btn-icon-sm">⋮</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</section>
+
+</body>
+</html>

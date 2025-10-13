@@ -1,0 +1,55 @@
+<%- include('../partials/dashboard-header') %>
+
+<section class="dashboard-page">
+  <div class="dashboard-container">
+    <%- include('../partials/dashboard-sidebar', { currentPage: 'files' }) %>
+
+    <main class="dashboard-main">
+      <div class="dashboard-header">
+        <h1>My Files</h1>
+        <button class="btn-primary">
+          <span>📤</span> Upload Files
+        </button>
+      </div>
+
+      <!-- File Browser -->
+      <div class="dashboard-card">
+        <div class="file-toolbar">
+          <div class="breadcrumb">
+            <a href="/dashboard/files">My Files</a>
+          </div>
+          <div class="view-options">
+            <button class="view-btn active">Grid</button>
+            <button class="view-btn">List</button>
+          </div>
+        </div>
+
+        <div class="files-grid">
+          <div class="file-card">
+            <div class="file-preview">📁</div>
+            <div class="file-name">Marketing Materials</div>
+            <div class="file-meta">142 files • 1.2 GB</div>
+          </div>
+          <div class="file-card">
+            <div class="file-preview">📄</div>
+            <div class="file-name">Q4 Report.pdf</div>
+            <div class="file-meta">2.4 MB</div>
+          </div>
+          <div class="file-card">
+            <div class="file-preview">📊</div>
+            <div class="file-name">Sales Dashboard.xlsx</div>
+            <div class="file-meta">842 KB</div>
+          </div>
+          <div class="file-card">
+            <div class="file-preview">🎬</div>
+            <div class="file-name">Product Demo.mp4</div>
+            <div class="file-meta">156 MB</div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</section>
+
+</body>
+</html>

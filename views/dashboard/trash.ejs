@@ -1,0 +1,33 @@
+<%- include('../partials/dashboard-header') %>
+
+<section class="dashboard-page">
+  <div class="dashboard-container">
+    <%- include('../partials/dashboard-sidebar', { currentPage: 'trash' }) %>
+
+    <main class="dashboard-main">
+      <div class="dashboard-header">
+        <h1>Trash</h1>
+        <button class="btn-outline">Empty Trash</button>
+      </div>
+
+      <div class="dashboard-card">
+        <div class="info-banner">
+          Files in trash will be permanently deleted after 30 days.
+        </div>
+        <div class="files-list">
+          <div class="file-item">
+            <span class="file-icon">📄</span>
+            <div class="file-info">
+              <h4>Old Report.pdf</h4>
+              <p>Deleted 5 days ago • 1.2 MB</p>
+            </div>
+            <button class="btn-outline-sm">Restore</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</section>
+
+</body>
+</html>
