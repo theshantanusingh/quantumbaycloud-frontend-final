@@ -1,85 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>
-    <%= title %>
-  </title>
+  <title><%= title %></title>
   <link rel="stylesheet" href="/css/main.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-
 <body>
   <nav class="navbar">
-    <div class="container">
-      <a href="/" class="logo">QuantumBayCloud</a>
-
-      <ul class="nav-links">
-        <li class="nav-item">
-          <a href="/features" class="nav-link">Features</a>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a href="#" class="nav-link">Products <span class="dropdown-arrow">▼</span></a>
-          <div class="dropdown-menu">
-            <a href="/storage" class="dropdown-item">
-              <div class="dropdown-icon">📁</div>
-              <div class="dropdown-content">
-                <div class="dropdown-title">Cloud Storage</div>
-                <div class="dropdown-desc">Secure file storage & sharing</div>
-              </div>
-            </a>
-            <a href="/email" class="dropdown-item">
-              <div class="dropdown-icon">📧</div>
-              <div class="dropdown-content">
-                <div class="dropdown-title">Email Hosting</div>
-                <div class="dropdown-desc">Professional business email</div>
-              </div>
-            </a>
-          </div>
-        </li>
-
-        <li class="nav-item">
-          <a href="/pricing" class="nav-link">Pricing</a>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a href="#" class="nav-link">Resources <span class="dropdown-arrow">▼</span></a>
-          <div class="dropdown-menu">
-            <a href="/support" class="dropdown-item">
-              <div class="dropdown-icon">💬</div>
-              <div class="dropdown-content">
-                <div class="dropdown-title">Support Center</div>
-                <div class="dropdown-desc">Get help & documentation</div>
-              </div>
-            </a>
-            <a href="/blog" class="dropdown-item">
-              <div class="dropdown-icon">📰</div>
-              <div class="dropdown-content">
-                <div class="dropdown-title">Blog</div>
-                <div class="dropdown-desc">Tips, guides & updates</div>
-              </div>
-            </a>
-            <a href="/api" class="dropdown-item">
-              <div class="dropdown-icon">⚙️</div>
-              <div class="dropdown-content">
-                <div class="dropdown-title">API Documentation</div>
-                <div class="dropdown-desc">Developer resources</div>
-              </div>
-            </a>
-          </div>
-        </li>
-
-        <li class="nav-item">
-          <a href="/contact" class="nav-link">Contact</a>
-        </li>
-
-
-
+    <div class="nav-container">
+      <a href="/" class="nav-logo">QuantumBayCloud</a>
+      
+      <!-- Desktop Menu -->
+      <ul class="nav-menu">
         <li class="nav-item dropdown">
           <a href="#" class="nav-link">Products <span class="dropdown-arrow">▼</span></a>
           <div class="dropdown-menu">
@@ -113,19 +49,118 @@
             </a>
           </div>
         </li>
-
+        <li class="nav-item"><a href="/features" class="nav-link">Features</a></li>
+        <li class="nav-item"><a href="/pricing" class="nav-link">Pricing</a></li>
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link">Resources <span class="dropdown-arrow">▼</span></a>
+          <div class="dropdown-menu">
+            <a href="/blog" class="dropdown-item">
+              <div class="dropdown-icon">📰</div>
+              <div class="dropdown-content">
+                <div class="dropdown-title">Blog</div>
+                <div class="dropdown-desc">Latest news & updates</div>
+              </div>
+            </a>
+            <a href="/support" class="dropdown-item">
+              <div class="dropdown-icon">💬</div>
+              <div class="dropdown-content">
+                <div class="dropdown-title">Support</div>
+                <div class="dropdown-desc">Get help & documentation</div>
+              </div>
+            </a>
+            <a href="/api" class="dropdown-item">
+              <div class="dropdown-icon">🔧</div>
+              <div class="dropdown-content">
+                <div class="dropdown-title">API Docs</div>
+                <div class="dropdown-desc">Developer resources</div>
+              </div>
+            </a>
+          </div>
+        </li>
+        <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
       </ul>
-
+      
       <div class="nav-actions">
-        <a href="/login" class="btn-secondary">Sign In</a>
-        <a href="/dashboard" class="btn-primary">Dashboard</a>
+        <a href="/login" class="nav-btn btn-login">Sign In</a>
+        <a href="/dashboard" class="nav-btn btn-signup">Dashboard</a>
       </div>
 
       <!-- Mobile Menu Toggle -->
-      <button class="mobile-menu-toggle">
+      <button class="mobile-menu-toggle" id="mobileMenuToggle">
         <span></span>
         <span></span>
         <span></span>
       </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <ul class="mobile-nav-list">
+        <li class="mobile-nav-item">
+          <a href="#" class="mobile-nav-link" onclick="toggleMobileDropdown(event, 'productsDropdown')">Products ▼</a>
+          <div class="mobile-dropdown" id="productsDropdown" style="display: none;">
+            <a href="/storage" class="mobile-dropdown-item">
+              <div class="dropdown-icon">📁</div>
+              <div class="dropdown-content">
+                <div class="dropdown-title">Cloud Storage</div>
+              </div>
+            </a>
+            <a href="/email" class="mobile-dropdown-item">
+              <div class="dropdown-icon">📧</div>
+              <div class="dropdown-content">
+                <div class="dropdown-title">Email Hosting</div>
+              </div>
+            </a>
+            <a href="/domains" class="mobile-dropdown-item">
+              <div class="dropdown-icon">🌐</div>
+              <div class="dropdown-content">
+                <div class="dropdown-title">Domain Registration</div>
+              </div>
+            </a>
+            <a href="/hosting" class="mobile-dropdown-item">
+              <div class="dropdown-icon">🖥️</div>
+              <div class="dropdown-content">
+                <div class="dropdown-title">Web Hosting</div>
+              </div>
+            </a>
+          </div>
+        </li>
+        <li class="mobile-nav-item">
+          <a href="/features" class="mobile-nav-link">Features</a>
+        </li>
+        <li class="mobile-nav-item">
+          <a href="/pricing" class="mobile-nav-link">Pricing</a>
+        </li>
+        <li class="mobile-nav-item">
+          <a href="#" class="mobile-nav-link" onclick="toggleMobileDropdown(event, 'resourcesDropdown')">Resources ▼</a>
+          <div class="mobile-dropdown" id="resourcesDropdown" style="display: none;">
+            <a href="/blog" class="mobile-dropdown-item">
+              <div class="dropdown-icon">📰</div>
+              <div class="dropdown-content">
+                <div class="dropdown-title">Blog</div>
+              </div>
+            </a>
+            <a href="/support" class="mobile-dropdown-item">
+              <div class="dropdown-icon">💬</div>
+              <div class="dropdown-content">
+                <div class="dropdown-title">Support</div>
+              </div>
+            </a>
+            <a href="/api" class="mobile-dropdown-item">
+              <div class="dropdown-icon">🔧</div>
+              <div class="dropdown-content">
+                <div class="dropdown-title">API Docs</div>
+              </div>
+            </a>
+          </div>
+        </li>
+        <li class="mobile-nav-item">
+          <a href="/contact" class="mobile-nav-link">Contact</a>
+        </li>
+      </ul>
+      <div class="mobile-actions">
+        <a href="/login" class="nav-btn btn-login">Sign In</a>
+        <a href="/dashboard" class="nav-btn btn-signup">Dashbaord</a>
+      </div>
     </div>
   </nav>
