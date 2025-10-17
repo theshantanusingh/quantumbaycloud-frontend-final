@@ -168,6 +168,41 @@
   background: #f9fafb;
 }
 
+/* Support CTA */
+.support-cta {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+  text-align: center;
+  color: #ffffff;
+}
+
+.support-cta h2 {
+  font-size: 44px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.support-cta p {
+  font-size: 20px;
+  margin-bottom: 40px;
+  color: #e0e7ff;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.support-cta .btn-primary {
+  background: #ffffff;
+  color: #3b82f6;
+}
+
+.support-cta .btn-primary:hover {
+  background: #f3f4f6;
+  color: #2563eb;
+}
+
+
 /* Responsive */
 @media (max-width: 968px) {
   .contact-grid {
