@@ -1065,6 +1065,147 @@
   margin: 0;
 }
 
+/* CTA Section */
+.cta {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+  text-align: center;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.cta .container {
+  position: relative;
+  z-index: 1;
+}
+
+.cta h2 {
+  font-size: 44px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cta p {
+  font-size: 20px;
+  margin-bottom: 40px;
+  color: #dbeafe;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.cta-actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+/* Primary button in CTA - White background */
+.cta .btn-primary {
+  background: #ffffff;
+  color: #1e3a8a;
+  border: 2px solid #ffffff;
+  padding: 16px 40px;
+  font-size: 17px;
+  font-weight: 700;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.cta .btn-primary:hover {
+  background: #f1f5f9;
+  color: #1e40af;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Outline button in CTA - White border and text */
+.cta .btn-outline {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  padding: 16px 40px;
+  font-size: 17px;
+  font-weight: 700;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.cta .btn-outline:hover {
+  background: #ffffff;
+  color: #1e3a8a;
+  border-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* CTA Note/Benefits */
+.cta-note {
+  font-size: 15px;
+  color: #dbeafe;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cta {
+    padding: 80px 0;
+  }
+
+  .cta h2 {
+    font-size: 32px;
+  }
+
+  .cta p {
+    font-size: 18px;
+  }
+
+  .cta-actions {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta {
+    padding: 60px 0;
+  }
+
+  .cta h2 {
+    font-size: 28px;
+  }
+
+  .cta p {
+    font-size: 16px;
+  }
+
+  .cta-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .cta .btn-primary,
+  .cta .btn-outline {
+    width: 100%;
+    padding: 16px 20px;
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
   .hero-title {
