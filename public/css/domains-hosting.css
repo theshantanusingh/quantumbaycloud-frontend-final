@@ -1,0 +1,191 @@
+/* Domain Search */
+.domain-search {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.search-box {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.search-box h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 32px;
+}
+
+.domain-search-form {
+  margin-bottom: 16px;
+}
+
+.search-input-group {
+  display: flex;
+  gap: 12px;
+  background: #ffffff;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.domain-input {
+  flex: 1;
+  padding: 14px 20px;
+  border: none;
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  color: #1f2937;
+  background: transparent;
+}
+
+.domain-input:focus {
+  outline: none;
+}
+
+.extension-select {
+  padding: 14px 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #4b5563;
+  background: #f9fafb;
+  cursor: pointer;
+  min-width: 120px;
+}
+
+.extension-select:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.search-note {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Domain Pricing */
+.domain-pricing {
+  padding: 80px 0;
+  background: #f9fafb;
+}
+
+.pricing-table-wrapper {
+  overflow-x: auto;
+  margin-top: 40px;
+}
+
+.domain-price-table {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  border-collapse: collapse;
+}
+
+.domain-price-table thead {
+  background: #f9fafb;
+}
+
+.domain-price-table th {
+  padding: 16px 24px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.domain-price-table td {
+  padding: 20px 24px;
+  font-size: 15px;
+  color: #4b5563;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.domain-price-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+.domain-price-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.pricing-note {
+  text-align: center;
+  font-size: 14px;
+  color: #6b7280;
+  margin-top: 24px;
+}
+
+/* Transfer Steps */
+.transfer-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.step-item {
+  display: flex;
+  gap: 16px;
+  padding: 20px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  align-items: flex-start;
+}
+
+.step-number {
+  width: 40px;
+  height: 40px;
+  background: #3b82f6;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.step-item h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 6px;
+}
+
+.step-item p {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .search-input-group {
+    flex-direction: column;
+  }
+  
+  .domain-input,
+  .extension-select {
+    width: 100%;
+  }
+  
+  .domain-price-table {
+    font-size: 13px;
+  }
+  
+  .domain-price-table th,
+  .domain-price-table td {
+    padding: 12px 16px;
+  }
+}

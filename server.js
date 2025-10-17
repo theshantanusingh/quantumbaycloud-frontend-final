@@ -264,6 +264,17 @@ app.get('/logout', (req, res) => {
   res.redirect('/login');
 });
 
+
+// Service Pages
+app.get('/domains', (req, res) => {
+  res.render('domains', { title: 'Domain Registration – QuantumBayCloud' });
+});
+
+app.get('/hosting', (req, res) => {
+  res.render('hosting', { title: 'Web Hosting Services – QuantumBayCloud' });
+});
+
+
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}/`);
 });

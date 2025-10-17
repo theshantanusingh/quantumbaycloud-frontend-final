@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= title %></title>
+  <title>
+    <%= title %>
+  </title>
   <link rel="stylesheet" href="/css/main.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <nav class="navbar">
     <div class="container">
       <a href="/" class="logo">QuantumBayCloud</a>
-      
+
       <ul class="nav-links">
         <li class="nav-item">
           <a href="/features" class="nav-link">Features</a>
         </li>
-        
+
         <li class="nav-item dropdown">
           <a href="#" class="nav-link">Products <span class="dropdown-arrow">▼</span></a>
           <div class="dropdown-menu">
@@ -38,11 +42,11 @@
             </a>
           </div>
         </li>
-        
+
         <li class="nav-item">
           <a href="/pricing" class="nav-link">Pricing</a>
         </li>
-        
+
         <li class="nav-item dropdown">
           <a href="#" class="nav-link">Resources <span class="dropdown-arrow">▼</span></a>
           <div class="dropdown-menu">
@@ -69,17 +73,54 @@
             </a>
           </div>
         </li>
-        
+
         <li class="nav-item">
           <a href="/contact" class="nav-link">Contact</a>
         </li>
+
+
+
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link">Products <span class="dropdown-arrow">▼</span></a>
+          <div class="dropdown-menu">
+            <a href="/storage" class="dropdown-item">
+              <div class="dropdown-icon">📁</div>
+              <div class="dropdown-content">
+                <div class="dropdown-title">Cloud Storage</div>
+                <div class="dropdown-desc">Secure file storage & sharing</div>
+              </div>
+            </a>
+            <a href="/email" class="dropdown-item">
+              <div class="dropdown-icon">📧</div>
+              <div class="dropdown-content">
+                <div class="dropdown-title">Email Hosting</div>
+                <div class="dropdown-desc">Professional business email</div>
+              </div>
+            </a>
+            <a href="/domains" class="dropdown-item">
+              <div class="dropdown-icon">🌐</div>
+              <div class="dropdown-content">
+                <div class="dropdown-title">Domain Registration</div>
+                <div class="dropdown-desc">Register your perfect domain</div>
+              </div>
+            </a>
+            <a href="/hosting" class="dropdown-item">
+              <div class="dropdown-icon">🖥️</div>
+              <div class="dropdown-content">
+                <div class="dropdown-title">Web Hosting</div>
+                <div class="dropdown-desc">Fast & reliable hosting</div>
+              </div>
+            </a>
+          </div>
+        </li>
+
       </ul>
-      
+
       <div class="nav-actions">
         <a href="/login" class="btn-secondary">Sign In</a>
         <a href="/dashboard" class="btn-primary">Dashboard</a>
       </div>
-      
+
       <!-- Mobile Menu Toggle -->
       <button class="mobile-menu-toggle">
         <span></span>
